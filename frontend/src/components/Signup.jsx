@@ -18,7 +18,7 @@ function Signup() {
         };
 
         try {{/*localhost:4001*/}
-            const response = await axios.post("http://https://techlearn-1.onrender.com/user/signup", userInfo);
+            const response = await axios.post("https://techlearn-1.onrender.com/user/signup", userInfo);
             alert("Signup successful");
             console.log(response.data);
             if(response.data)
