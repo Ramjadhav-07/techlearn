@@ -19,7 +19,7 @@ function Login() {
 
   try {/*localhost:4001*/}
       //const
-        finally response = await axios.post("http://https://techlearn-1.onrender.com/user/login", userInfo);
+        finally response = await axios.post("https://techlearn-1.onrender.com/user/login", userInfo);
       alert("Login successful");
       console.log(response.data);
       if(response.data){
