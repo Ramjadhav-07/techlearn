@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
@@ -17,20 +17,19 @@ function Login() {
       password: data.password,
     };
 
-  try {/*localhost:4001*/}
-      //const
-        finally response = await axios.post("https://techlearn-1.onrender.com/user/login", userInfo);
+    try {
+      const response = await axios.post("https://techlearn-1.onrender.com/user/login", userInfo);
       alert("Login successful");
       console.log(response.data);
-      if(response.data){
-        toast.success("Login successfull");setTimeout(()=>{
+      
+      if (response.data) {
+        toast.success("Login successful");
+        setTimeout(() => {
           document.getElementById("my_modal_3").close();
-          window.location.reload(); 
-
-        },3000)
-        document.getElementById("my_modal_3").close();
-        window.location.reload();
+          window.location.reload();
+        }, 3000);
       }
+      
       localStorage.setItem("Users", JSON.stringify(response.data.user));
     } catch (err) {
       console.error(err);
@@ -41,14 +40,12 @@ function Login() {
   return (
     <dialog id="my_modal_3" className="modal">
       <div className="modal-box">
-         
         <h3 className="font-bold text-lg">Login</h3>
-        {/*<Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</Link>*/}
-
-
+        
         <Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => dialogRef.current.close()}>
           ✕
         </Link>
+        
         <form onSubmit={handleSubmit(onSubmit)} method="dialog">
           <div>
             <label htmlFor="email">Email</label><br />
