@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'poppins',sans-serif;
+}
+
+
+ /* Navbar styles */
+.navbar {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space items */
+  align-items: center; /* Center items vertically */
+}
+
+/* Ensure the navbar items stay in a single line on mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .navbar-start, .navbar-end {
+    display: flex; /* Ensure they remain in a line */
+    align-items: center; /* Center items vertically */
+  }
+
+  .dropdown-content {
+    position: absolute; /* Ensure the dropdown doesn't overlap */
+    top: 100%; /* Place it directly below the button */
+    left: 0; /* Align to the left */
+    z-index: 100; /* Ensure it appears above other content */
+  }
+
+  .navbar-end {
+    margin-top: 0; /* Remove margin on mobile */
+  }
+
+  .menu {
+    flex-direction: row; /* Keep items in a row */
+  }
+}
+/* Add this CSS in your stylesheet */
+ul {
+  padding-left: 1.5rem; /* Ensure there's enough space for the bullets */
+}
+
+li {
+  list-style-position: inside; /* Ensures bullets are aligned with text */
+}
+.footer-background {
+  background-image: url('footerbg1.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire footer area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+}
